@@ -18,7 +18,7 @@ COMMANDS = ['fscat',
             'fsmount']
 
 
-CONSOLE_SCRIPTS = ['{0} = fs.commands.{0}:run'.format(command)
+CONSOLE_SCRIPTS = ['{0} = fs1.commands.{0}:run'.format(command)
                    for command in COMMANDS]
 
 classifiers = [
@@ -42,7 +42,7 @@ if PY3:
     extra["use_2to3"] = True
 
 setup(install_requires=['setuptools', 'six'],
-      name='fs',
+      name='fs1',
       version=VERSION,
       description="Filesystem abstraction layer",
       long_description=long_desc,
@@ -51,20 +51,20 @@ setup(install_requires=['setuptools', 'six'],
       author_email="will@willmcgugan.com",
       url="http://pypi.python.org/pypi/fs/",
       platforms=['any'],
-      packages=['fs',
-                'fs.expose',
-                'fs.expose.dokan',
-                'fs.expose.fuse',
-                'fs.expose.wsgi',
-                'fs.tests',
-                'fs.wrapfs',
-                'fs.osfs',
-                'fs.contrib',
-                'fs.contrib.bigfs',
-                'fs.contrib.davfs',
-                'fs.contrib.tahoelafs',
-                'fs.commands'],
-      package_data={'fs': ['tests/data/*.txt']},
+      packages=['fs1',
+                'fs1.expose',
+                'fs1.expose.dokan',
+                'fs1.expose.fuse',
+                'fs1.expose.wsgi',
+                'fs1.tests',
+                'fs1.wrapfs',
+                'fs1.osfs',
+                'fs1.contrib',
+                'fs1.contrib.bigfs',
+                'fs1.contrib.davfs',
+                'fs1.contrib.tahoelafs',
+                'fs1.commands'],
+      package_data={'fs1': ['tests/data/*.txt']},
       entry_points={"console_scripts": CONSOLE_SCRIPTS},
       classifiers=classifiers,
       **extra
